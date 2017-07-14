@@ -1,16 +1,21 @@
 apply plugin: 'java'
 apply plugin: 'groovy'
+apply plugin: 'application'
 
 repositories {
     jcenter()
 }
 
+mainClassName = 'pt.fabm.mock.QuickStart'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+version = '1.0'
+
 dependencies {
+    compile 'com.google.api-client:google-api-client:1.22.0'
+    compile 'com.google.oauth-client:google-oauth-client-jetty:1.22.0'
+    compile 'com.google.apis:google-api-services-sheets:v4-rev476-1.22.0'
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.11'
-    compile 'org.eclipse.jetty:jetty-servlet:9.2.11.v20150529'
-    compile 'org.eclipse.jetty:jetty-server:9.2.11.v20150529'
-    compile group: 'commons-io', name: 'commons-io', version: '2.4'
-    compile 'javax.servlet:javax.servlet-api:3.1.0'
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+
 }
 
