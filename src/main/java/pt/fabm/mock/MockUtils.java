@@ -32,7 +32,7 @@ public class MockUtils {
         return resp;
     }
 
-    public Script scriptFromFile(String file) throws IOException {
+    public Script load(String file) throws IOException {
         Reader reader = Files.newBufferedReader(Paths.get(scriptsPath+"/"+file+".groovy"),Charset.defaultCharset());
         GroovyShell shell = new GroovyShell();
         shell.setVariable("req",req);
